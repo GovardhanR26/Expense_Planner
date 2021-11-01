@@ -104,18 +104,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Draggable(
-        childWhenDragging: Container(),
-        feedback: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
-        ),
-        child: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            _startAddNewTransaction(context);
-          },
-        ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          _startAddNewTransaction(context);
+        },
       ),
     );
   }
