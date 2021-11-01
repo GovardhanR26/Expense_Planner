@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expense Planner',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.green,
         accentColor: Colors.amber,
         fontFamily: 'Open Sans',
       ),
@@ -104,11 +104,20 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          _startAddNewTransaction(context);
-        },
+      floatingActionButton: Draggable(
+        feedback: FloatingActionButton(
+          backgroundColor: Theme.of(context).primaryColor,
+          child: Icon(Icons.add),
+          onPressed: () {},
+        ),
+        child: FloatingActionButton(
+          backgroundColor: Theme.of(context).primaryColor,
+          child: Icon(Icons.add),
+          onPressed: () {
+            _startAddNewTransaction(context);
+          },
+        ),
+        childWhenDragging: Container(),
       ),
     );
   }

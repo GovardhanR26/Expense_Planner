@@ -16,7 +16,10 @@ class TransactionList extends StatelessWidget {
       child: _userTransactions.isEmpty
           ? Column(
               children: [
-                Text('No transaction added yet!'),
+                Text(
+                  'No transaction added yet!',
+                  style: TextStyle(fontSize: 15),
+                ),
                 SizedBox(
                   height: 20,
                 ),
@@ -46,7 +49,8 @@ class TransactionList extends StatelessWidget {
                         .format(_userTransactions[index].date)),
                     trailing: IconButton(
                       icon: Icon(Icons.delete),
-                      color: Theme.of(context).errorColor,
+                      // color: Theme.of(context).errorColor,
+                      color: Color.fromRGBO(46, 139, 87, 1),
                       onPressed: () => deleteTx(_userTransactions[index].id),
                     ),
                   ),
